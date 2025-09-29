@@ -8,6 +8,8 @@ with app.app_context():
     db.drop_all()
     db.create_all()
 
+    #Create plant objects with IDs names images prices n stock status
+
     aloe = Plant(
         id=1,
         name="Aloe",
