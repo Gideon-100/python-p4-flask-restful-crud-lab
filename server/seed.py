@@ -8,8 +8,6 @@ with app.app_context():
     db.drop_all()
     db.create_all()
 
-    #Create plant objects with IDs names images prices n stock status
-
     aloe = Plant(
         id=1,
         name="Aloe",
@@ -26,6 +24,10 @@ with app.app_context():
         is_in_stock=False,
     )
 
+
     db.session.add_all([aloe, zz_plant])
     db.session.commit()
+
     print("✅ Database seeded with Aloe (id=1) and ZZ Plant (id=2)")
+
+
