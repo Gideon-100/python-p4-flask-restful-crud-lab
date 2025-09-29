@@ -3,10 +3,10 @@
 from app import app
 from models import db, Plant
 
-
 with app.app_context():
-
-    Plant.query.delete()
+    
+    db.drop_all()
+    db.create_all()
 
     aloe = Plant(
         id=1,
@@ -26,3 +26,4 @@ with app.app_context():
 
     db.session.add_all([aloe, zz_plant])
     db.session.commit()
+    print("✅ Database seeded with Aloe (id=1) and ZZ Plant (id=2)")
